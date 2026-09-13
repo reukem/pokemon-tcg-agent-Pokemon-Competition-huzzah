@@ -162,3 +162,24 @@ This submission demonstrates a comprehensive, mathematically rigorous AI archite
 3. **Empirical Robustness:** Achieves an 88.4% win rate over heuristic baselines and maintains a 62.7% win rate even under severe opening state deprivation.
 
 By prioritizing structured probabilistic planning over greedy decision-making, our agent provides a reproducible framework for strategic mastery in imperfect-information card games.
+
+---
+
+## 5. Quickstart & Agent Usage
+
+### Installation
+Clone this repository and install the minimal dependencies:
+```bash
+git clone https://github.com/reukem/pokemon-tcg-agent-Pokemon-Competition-huzzah.git
+cd pokemon-tcg-agent-Pokemon-Competition-huzzah
+pip install -r requirements.txt
+```
+
+### Running the Agent Decision Loop
+Execute the sample IS-MCTS simulation loop:
+```bash
+python agent.py
+```
+
+### Note on Competition Dataset
+In accordance with Kaggle upload limits (<100MB) and competition guidelines, the official 641 MB card datasets and ID catalogs are maintained directly within the [Kaggle Competition Environment](https://www.kaggle.com/competitions/pokemon-tcg-ai-battle-challenge-strategy). This repository provides the standalone, modular agent architecture and damage-spread optimization engine.

@@ -100,14 +100,14 @@ Traditional MCTS exhibits strategy fusion and non-locality when applied directly
 ### 2.2 Mathematical Formulation of IS-MCTS
 At each search step, an information set node $I$ represents the sequence of observations available to the agent. During tree traversal, the child node is selected according to the modified UCB1 policy:
 
-$$U(I, a) = Q(I, a) + c \cdot P(a \mid s) \cdot \sqrt{rac{\ln N(I)}{1 + N(I, a)}}$$
+$$U(I, a) = Q(I, a) + c \cdot P(a \mid s) \cdot \sqrt{\frac{\ln N(I)}{1 + N(I, a)}}$$
 
 Where $Q(I, a)$ is the mean value outcome backpropagated to action $a$, $N(I)$ is the total visit count of information set $I$, $N(I, a)$ is the visit count for action $a$, $P(a \mid s)$ is the prior probability from the Policy Head, and $c = 1.414$.
 
 ### 2.3 Damage Distribution Optimization (Phantom Dive Solver)
 The placement of *Phantom Dive*'s 6 damage counters (60 damage in increments of 10) across $K$ benched Pokémon represents an integer allocation problem. Our agent formulates this as a dynamic utility evaluation:
 
-$$\max_{\{d_1, \dots, d_K\}} \sum_{k=1}^K U_k(HP_k, d_k) \quad 	ext{subject to} \quad \sum_{k=1}^K d_k = 60, \quad d_k \in \{0, 10, \dots, 60\}$$
+$$\max_{\{d_1, \dots, d_K\}} \sum_{k=1}^K U_k(HP_k, d_k) \quad \text{subject to} \quad \sum_{k=1}^K d_k = 60, \quad d_k \in \{0, 10, \dots, 60\}$$
 
 The utility $U_k$ incorporates:
 1. **Immediate Knock Out Value:** High reward if $d_k \ge HP_k$ (eliminating threats and claiming Prize cards immediately).

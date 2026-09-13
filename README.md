@@ -11,7 +11,7 @@ To achieve championship-grade strategic reasoning, we engineered an **Informatio
 
 ---
 
-## 1. Deck Construction & Strategic Architecture (Deck Score — 20%)
+## 1. Deck Construction & Strategic Architecture
 
 ### 1.1 Intentional Deck Selection: Why Dragapult ex?
 In AI evaluation, linear aggressive decks (e.g., Miraidon ex) test only basic acceleration. In contrast, **Dragapult ex (Twilight Masquerade #130)** tests deep strategic reasoning. The *Phantom Dive* attack requires allocating 6 damage counters across multiple targets every turn. Competitive players plan damage distribution 2 to 3 turns ahead to stage simultaneous multi-Prize Knock Outs while bypassing protective abilities (e.g., Manaphy's *Wave Veil* only blocks direct bench damage, not damage counters). This makes Dragapult ex the ideal benchmark for evaluating long-horizon planning under uncertainty.
@@ -48,7 +48,7 @@ The deck is constructed to maximize operational consistency, guarantee early-gam
 
 ---
 
-## 2. Model Architecture & Algorithmic Soundness (Model Score — 70%)
+## 2. Model Architecture & Algorithmic Soundness
 
 ### 2.1 The Challenge of Hidden Information
 Standard Monte Carlo Tree Search (MCTS) assumes full observability (Markov Decision Process). In Pokémon TCG, the game is a **Partially Observable Stochastic Game (POSG)**:
@@ -116,7 +116,7 @@ The utility $U_k$ incorporates:
 
 ---
 
-## 3. Empirical Results, Consistency & Robustness Analysis (Model Score — 70%)
+## 3. Empirical Results, Consistency & Robustness Analysis
 
 ### 3.1 Controlled Benchmark Performance
 The model was evaluated across 1,000 full-game simulated matches against baseline AI systems under standardized tournament conditions:
@@ -154,7 +154,7 @@ Even under severe opening bricks (14.3% of occurrences), the agent maintains a *
 
 ---
 
-## 4. Conclusion & Technical Contributions (Report Score — 10%)
+## 4. Conclusion & Technical Contributions
 
 This submission demonstrates a comprehensive, mathematically rigorous AI architecture for competitive Pokémon TCG play:
 1. **Architectural Innovation:** Successfully bridges Information Set Monte Carlo Tree Search with Deep Policy-Value Reinforcement Learning to overcome hidden information and variance.
